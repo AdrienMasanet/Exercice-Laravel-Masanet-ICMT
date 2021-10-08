@@ -14,5 +14,7 @@ services:
 tooling:
   npm:
     service: node
+  npx:
+    service: node
   node:
     service: node

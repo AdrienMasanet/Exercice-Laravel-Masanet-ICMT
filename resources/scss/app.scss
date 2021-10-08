@@ -1,0 +1,8 @@
+#logo {
+    transition: all .5s ease-in-out;
+    filter: none;
+
+    &:hover {
+        filter: drop-shadow(0 0 10px rgba(255,255,255.5));
+    }
+}
