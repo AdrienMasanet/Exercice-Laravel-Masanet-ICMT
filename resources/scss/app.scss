@@ -1,8 +1,55 @@
-#logo {
-    transition: all .5s ease-in-out;
-    filter: none;
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
-    &:hover {
-        filter: drop-shadow(0 0 10px rgba(255,255,255.5));
+@font-face {
+    font-family: "GT Walsheim Pro";
+    src: local("GT Walsheim Pro Regular"), local("GT-Walsheim-Pro-Regular"), url("../assets/fonts/GTWalsheimPro-Regular.woff2") format("woff2"), url("../assets/fonts/GTWalsheimPro-Regular.woff") format("woff"), url("../assets/fonts/GTWalsheimPro-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+$themeColorBlack: #090909;
+$themeColorWhite: #f6f6f6;
+$themeColorDarkBlue: #161d30;
+$themeColorOrange: #ef3b24;
+
+html {
+    body {
+        font-family: "GT Walsheim Pro";
+
+        h1, h2, h3, h4, h5, h6, a, p, div {
+            color: $themeColorBlack;
+        }
+
+        a {
+            transition: color .15s ease-in-out;
+        }
+
+        a:hover {
+            color: $themeColorOrange !important;
+        }
+
+        .logo {
+            max-width: 70%;
+            height: auto;
+            transition: all .15s ease-in-out;
+            filter: none;
+
+            &:hover {
+                filter: drop-shadow(0 0 4px rgba(255, 255, 255, .5));
+                transform: scale(1.01);
+            }
+        }
+
+        #footer {
+            background: $themeColorDarkBlue;
+
+            div, h4, li, a, p {
+                color: $themeColorWhite;
+            }
+        }
     }
+
 }

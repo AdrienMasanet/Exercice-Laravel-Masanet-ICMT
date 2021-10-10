@@ -1,4 +1,4 @@
-name: exercice-laravel-masanet-mr-robot
+name: ICMT
 recipe: laravel
 config:
   webroot: ./public/

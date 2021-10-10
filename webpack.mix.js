@@ -1,4 +1,4 @@
-const mix = require( 'laravel-mix' );
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,18 +11,19 @@ const mix = require( 'laravel-mix' );
  |
  */
 
-mix.js( 'resources/js/app.js', 'public/js' )
-    .postCss( 'resources/css/app.css', 'public/css', [
-        require( 'tailwindcss' )
-    ] )
-    .copy( 'resources/assets/images', 'public/images' )
-    .sass( 'resources/scss/app.scss', 'public/css' )
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
+        require('tailwindcss')
+    ])
+    .copy('resources/assets/images', 'public/images')
+    .copy('resources/assets/fonts', 'public/fonts')
+    .sass('resources/scss/app.scss', 'public/css')
     .version()
-    .browserSync( {
+    .browserSync({
         proxy: 'exercice-laravel-masanet-mr-robot.lndo.site',
         open: false
-    } );
+    });
 
-if ( mix.inProduction() ) {
+if (mix.inProduction()) {
     mix.version();
 }
