@@ -2062,6 +2062,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./topbar */ "./resources/js/topbar.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2092,6 +2094,30 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/topbar.js":
+/*!********************************!*\
+  !*** ./resources/js/topbar.js ***!
+  \********************************/
+/***/ (() => {
+
+mobileMenu = document.querySelector(".topbar-items"); // Gestion du toggle button pour les téléphones
+
+mobileMenuToggleButton = document.querySelector(".mobile-menu-toggler");
+mobileMenuToggleButton.addEventListener("click", function () {
+  if (mobileMenu.classList.contains("expanded")) {
+    mobileMenu.classList.remove("expanded");
+  } else {
+    mobileMenu.classList.add("expanded");
+  }
+}); // déplacement vers le bas du contenu en fonction de la taille de la topbar
+
+topbar = document.querySelector("#topbar");
+content = document.querySelector("#content");
+content.style.marginTop = topbar.offsetHeight + "px";
+console.log(topbar.offsetHeight);
 
 /***/ }),
 

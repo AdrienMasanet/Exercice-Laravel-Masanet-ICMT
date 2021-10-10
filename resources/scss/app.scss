@@ -17,7 +17,7 @@ $themeColorOrange: #ef3b24;
 
 html {
     body {
-        font-family: "GT Walsheim Pro";
+        font-family: "GT Walsheim Pro", "Roboto", sans-serif;
 
         h1, h2, h3, h4, h5, h6, a, p, div {
             color: $themeColorBlack;
@@ -43,7 +43,43 @@ html {
             }
         }
 
-        #footer {
+        #topbar {
+            .topbar-items {
+                background: rgba($themeColorDarkBlue, .95);
+                overflow: hidden;
+                padding: 0;
+                z-index: 100;
+                transition: max-height .5s ease-in-out, padding .7s ease-in-out;;
+
+                &.expanded {
+                    max-height: 100vh;
+                    padding: 0 1.25rem 1.25rem 1.25rem;
+                }
+
+                .topbar-item {
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: relative;
+                        margin: 0 auto;
+                        top: 2em;
+                        height: 3px;
+                        background-color: $themeColorOrange;
+                        width: 0;
+                        transition: width 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        #footer, #topbar {
             background: $themeColorDarkBlue;
 
             div, h4, li, a, p {

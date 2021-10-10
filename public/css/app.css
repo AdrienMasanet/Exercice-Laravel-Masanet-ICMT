@@ -6130,7 +6130,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
 }
 html body {
-  font-family: "GT Walsheim Pro";
+  font-family: "GT Walsheim Pro", "Roboto", sans-serif;
 }
 html body h1, html body h2, html body h3, html body h4, html body h5, html body h6, html body a, html body p, html body div {
   color: #090909;
@@ -6151,10 +6151,35 @@ html body .logo:hover {
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
   transform: scale(1.01);
 }
-html body #footer {
+html body #topbar .topbar-items {
+  background: rgba(22, 29, 48, 0.95);
+  overflow: hidden;
+  padding: 0;
+  z-index: 100;
+  transition: max-height 0.5s ease-in-out, padding 0.7s ease-in-out;
+}
+html body #topbar .topbar-items.expanded {
+  max-height: 100vh;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+}
+html body #topbar .topbar-items .topbar-item::before {
+  content: "";
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 2em;
+  height: 3px;
+  background-color: #ef3b24;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+html body #topbar .topbar-items .topbar-item:hover::before {
+  width: 100%;
+}
+html body #footer, html body #topbar {
   background: #161d30;
 }
-html body #footer div, html body #footer h4, html body #footer li, html body #footer a, html body #footer p {
+html body #footer div, html body #footer h4, html body #footer li, html body #footer a, html body #footer p, html body #topbar div, html body #topbar h4, html body #topbar li, html body #topbar a, html body #topbar p {
   color: #f6f6f6;
 }
 /*! tailwindcss v2.2.16 | MIT License | https://tailwindcss.com */

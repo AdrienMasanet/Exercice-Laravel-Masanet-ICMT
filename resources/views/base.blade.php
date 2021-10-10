@@ -21,7 +21,7 @@
 
     <x-topbar />
 
-    <div class="container mx-auto">
+    <div id="content">
         @yield('content')
     </div>
 
