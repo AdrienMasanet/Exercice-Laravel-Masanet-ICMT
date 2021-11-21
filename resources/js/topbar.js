@@ -14,4 +14,3 @@ mobileMenuToggleButton.addEventListener("click", function () {
 topbar = document.querySelector("#topbar")
 content = document.querySelector("#content")
 content.style.marginTop = topbar.offsetHeight + "px"
-console.log(topbar.offsetHeight)

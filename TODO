@@ -1,6 +1,9 @@
 À FAIRE :
-Finir le footer (j'en étais au css)
-Finir la topbar
-Créer les migrations et les modèles
+Setup les migrations et les modèles
+Setup le système de login
+Faire le front du back office
 
 FAIT :
+Faire le footer
+Faire la topbar
+Setup l'environnement de développement, librairies & dépendances

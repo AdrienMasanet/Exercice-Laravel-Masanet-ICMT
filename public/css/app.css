@@ -6156,7 +6156,7 @@ html body #topbar .topbar-items {
   overflow: hidden;
   padding: 0;
   z-index: 100;
-  transition: max-height 0.5s ease-in-out, padding 0.7s ease-in-out;
+  transition: max-height 0.5s ease-in-out, padding 0.7s ease-out;
 }
 html body #topbar .topbar-items.expanded {
   max-height: 100vh;
