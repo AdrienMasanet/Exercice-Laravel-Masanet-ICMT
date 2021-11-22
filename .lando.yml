@@ -1,4 +1,4 @@
-name: ICMT
+name: icmt
 recipe: laravel
 config:
   webroot: ./public/
