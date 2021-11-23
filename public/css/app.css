@@ -6132,7 +6132,15 @@ readers do not read off random characters that represent icons */
 html body {
   font-family: "GT Walsheim Pro", "Roboto", sans-serif;
 }
-html body h1, html body h2, html body h3, html body h4, html body h5, html body h6, html body a, html body p, html body div {
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body a,
+html body p,
+html body div {
   color: #090909;
 }
 html body a {
@@ -6176,11 +6184,92 @@ html body #topbar .topbar-items .topbar-item::before {
 html body #topbar .topbar-items .topbar-item:hover::before {
   width: 100%;
 }
-html body #footer, html body #topbar {
+html body #footer,
+html body #topbar {
   background: #161d30;
 }
-html body #footer div, html body #footer h4, html body #footer li, html body #footer a, html body #footer p, html body #topbar div, html body #topbar h4, html body #topbar li, html body #topbar a, html body #topbar p {
+html body #footer div,
+html body #footer h4,
+html body #footer li,
+html body #footer a,
+html body #footer p,
+html body #topbar div,
+html body #topbar h4,
+html body #topbar li,
+html body #topbar a,
+html body #topbar p {
   color: #f6f6f6;
+}
+html body #pagination #pagination-buttons span:not(:last-child) {
+  border-right: solid 1px rgba(22, 29, 48, 0.075);
+}
+html body #pagination #pagination-buttons span {
+  border-radius: 8px;
+  background-color: #f6f6f6;
+}
+html body #pagination #pagination-buttons span:hover button {
+  color: #ef3b24;
+}
+html body #pagination #pagination-buttons span .active-page {
+  background-color: #f6f6f6;
+}
+html body #pagination #pagination-buttons span .active-page span {
+  color: #ef3b24;
+}
+html body #pagination #pagination-buttons span button {
+  height: 100%;
+}
+html body .color-black {
+  color: #090909;
+}
+html body .color-white {
+  color: #f6f6f6;
+}
+html body .color-darkblue {
+  color: #161d30;
+}
+html body .color-orange {
+  color: #ef3b24;
+}
+html body .background-black {
+  background-color: #090909;
+}
+html body .background-white {
+  background-color: #f6f6f6;
+}
+html body .background-darkblue {
+  background-color: #161d30;
+}
+html body .background-orange {
+  background-color: #ef3b24;
+}
+html body .hover-color-black:hover {
+  background-color: #090909;
+}
+html body .hover-color-white:hover {
+  background-color: #f6f6f6;
+}
+html body .hover-color-darkblue:hover {
+  background-color: #161d30;
+}
+html body .hover-color-orange:hover {
+  background-color: #ef3b24;
+}
+html body .hover-border-color-black:hover {
+  border-color: #090909 !important;
+}
+html body .hover-border-color-white:hover {
+  border-color: #f6f6f6 !important;
+}
+html body .hover-border-color-darkblue:hover {
+  border-color: #161d30 !important;
+}
+html body .hover-border-color-orange:hover {
+  border-color: #ef3b24 !important;
+}
+html body .pretty-border {
+  border: solid 1px rgba(22, 29, 48, 0.25);
+  border-radius: 4px;
 }
 /*! tailwindcss v2.2.16 | MIT License | https://tailwindcss.com */
 

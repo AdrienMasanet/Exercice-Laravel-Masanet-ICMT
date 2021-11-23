@@ -1,0 +1,32 @@
+#data-table table {
+  border-collapse: inherit;
+  padding: 0.5rem;
+}
+#data-table th {
+  background-color: #f6f6f6;
+  padding: 0.5rem 2rem;
+  border: solid 1px rgba(22, 29, 48, 0.25);
+  border-top: none;
+}
+#data-table th:first-child {
+  border-left: none;
+}
+#data-table th:last-child {
+  border-right: none;
+}
+#data-table tbody tr {
+  padding: 2rem;
+  transition: all 0.1s ease-in-out;
+  background-color: #f6f6f6;
+}
+#data-table tbody tr:nth-child(2n) {
+  background-color: rgba(22, 29, 48, 0.1);
+}
+#data-table tbody tr:hover {
+  background-color: #ef3b24;
+  color: #f6f6f6;
+  cursor: pointer;
+}
+#data-table tbody td {
+  padding: 0.1rem 0.5rem;
+}

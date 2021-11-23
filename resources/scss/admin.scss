@@ -1,0 +1,48 @@
+$themeColorBlack: #090909;
+$themeColorWhite: #f6f6f6;
+$themeColorDarkBlue: #161d30;
+$themeColorOrange: #ef3b24;
+
+#data-table {
+    table {
+        border-collapse: inherit;
+        padding: 0.5rem;
+    }
+
+    th {
+        background-color: $themeColorWhite;
+        padding: 0.5rem 2rem;
+        border: solid 1px rgba($themeColorDarkBlue, 0.25);
+        border-top: none;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    tbody {
+        tr {
+            padding: 2rem;
+            transition: all 0.1s ease-in-out;
+            background-color: $themeColorWhite;
+        }
+
+        tr:nth-child(2n) {
+            background-color: rgba($themeColorDarkBlue, 0.1);
+        }
+
+        tr:hover {
+            background-color: $themeColorOrange;
+            color: $themeColorWhite;
+            cursor: pointer;
+        }
+
+        td {
+            padding: .1rem .5rem;
+        }
+    }
+}

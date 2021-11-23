@@ -1,9 +1,11 @@
 À FAIRE :
-Setup les migrations et les modèles
+Faire les crud (voir avec la technique livewire)
 Setup le système de login
-Faire le front du back office
 
 FAIT :
+Faire le front du back office
+Faire le composant de menu
+Setup les migrations et les modèles
 Faire le footer
 Faire la topbar
 Setup l'environnement de développement, librairies & dépendances

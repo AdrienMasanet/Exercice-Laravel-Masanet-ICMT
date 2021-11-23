@@ -16,7 +16,7 @@
     </div>
 
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto text-center lg:p-5 lg:p-0 max-h-0 lg:max-h-screen topbar-items">
-        <div class="text-sm lg:flex-grow">
+        <div class="text-lg lg:flex-grow">
             <a href="/" class="block my-2 lg:inline-block lg:mt-0 text-teal-200 hover:text-white lg:mr-4 topbar-item">Accueil</a>
             <a href="" class="block my-2 lg:inline-block lg:mt-0 text-teal-200 hover:text-white lg:mr-4 topbar-item">Fonctionnement</a>
             <a href="" class="block my-2 lg:inline-block lg:mt-0 text-teal-200 hover:text-white lg:mr-4 topbar-item">Actualités</a>

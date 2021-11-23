@@ -1,11 +1,14 @@
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
 @font-face {
     font-family: "GT Walsheim Pro";
-    src: local("GT Walsheim Pro Regular"), local("GT-Walsheim-Pro-Regular"), url("../assets/fonts/GTWalsheimPro-Regular.woff2") format("woff2"), url("../assets/fonts/GTWalsheimPro-Regular.woff") format("woff"), url("../assets/fonts/GTWalsheimPro-Regular.ttf") format("truetype");
+    src: local("GT Walsheim Pro Regular"), local("GT-Walsheim-Pro-Regular"),
+        url("../assets/fonts/GTWalsheimPro-Regular.woff2") format("woff2"),
+        url("../assets/fonts/GTWalsheimPro-Regular.woff") format("woff"),
+        url("../assets/fonts/GTWalsheimPro-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -19,12 +22,20 @@ html {
     body {
         font-family: "GT Walsheim Pro", "Roboto", sans-serif;
 
-        h1, h2, h3, h4, h5, h6, a, p, div {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        p,
+        div {
             color: $themeColorBlack;
         }
 
         a {
-            transition: color .15s ease-in-out;
+            transition: color 0.15s ease-in-out;
         }
 
         a:hover {
@@ -34,22 +45,22 @@ html {
         .logo {
             max-width: 70%;
             height: auto;
-            transition: all .15s ease-in-out;
+            transition: all 0.15s ease-in-out;
             filter: none;
 
             &:hover {
-                filter: drop-shadow(0 0 4px rgba(255, 255, 255, .5));
+                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
                 transform: scale(1.01);
             }
         }
 
         #topbar {
             .topbar-items {
-                background: rgba($themeColorDarkBlue, .95);
+                background: rgba($themeColorDarkBlue, 0.95);
                 overflow: hidden;
                 padding: 0;
                 z-index: 100;
-                transition: max-height .5s ease-in-out, padding .7s ease-out;
+                transition: max-height 0.5s ease-in-out, padding 0.7s ease-out;
 
                 &.expanded {
                     max-height: 100vh;
@@ -76,16 +87,133 @@ html {
                     }
                 }
             }
-
         }
 
-        #footer, #topbar {
+        #footer,
+        #topbar {
             background: $themeColorDarkBlue;
 
-            div, h4, li, a, p {
+            div,
+            h4,
+            li,
+            a,
+            p {
                 color: $themeColorWhite;
             }
         }
-    }
 
+        #pagination #pagination-buttons {
+            span:not(:last-child) {
+                border-right: solid 1px rgba($themeColorDarkBlue, 0.075);
+            }
+
+            span {
+                border-radius: 8px;
+                background-color: $themeColorWhite;
+
+                &:hover {
+                    button {
+                        color: $themeColorOrange;
+                    }
+                }
+
+                .active-page {
+                    background-color: $themeColorWhite;
+
+                    span {
+                        color: $themeColorOrange;
+                    }
+                }
+
+                button {
+                    height: 100%;
+                }
+            }
+        }
+
+        .color-black {
+            color: $themeColorBlack;
+        }
+
+        .color-white {
+            color: $themeColorWhite;
+        }
+
+        .color-darkblue {
+            color: $themeColorDarkBlue;
+        }
+
+        .color-orange {
+            color: $themeColorOrange;
+        }
+
+        .background-black {
+            background-color: $themeColorBlack;
+        }
+
+        .background-white {
+            background-color: $themeColorWhite;
+        }
+
+        .background-darkblue {
+            background-color: $themeColorDarkBlue;
+        }
+
+        .background-orange {
+            background-color: $themeColorOrange;
+        }
+
+        .hover-color-black {
+            &:hover {
+                background-color: $themeColorBlack;
+            }
+        }
+
+        .hover-color-white {
+            &:hover {
+                background-color: $themeColorWhite;
+            }
+        }
+
+        .hover-color-darkblue {
+            &:hover {
+                background-color: $themeColorDarkBlue;
+            }
+        }
+
+        .hover-color-orange {
+            &:hover {
+                background-color: $themeColorOrange;
+            }
+        }
+
+        .hover-border-color-black {
+            &:hover {
+                border-color: $themeColorBlack !important;
+            }
+        }
+
+        .hover-border-color-white {
+            &:hover {
+                border-color: $themeColorWhite !important;
+            }
+        }
+
+        .hover-border-color-darkblue {
+            &:hover {
+                border-color: $themeColorDarkBlue !important;
+            }
+        }
+
+        .hover-border-color-orange {
+            &:hover {
+                border-color: $themeColorOrange !important;
+            }
+        }
+
+        .pretty-border {
+            border: solid 1px rgba($themeColorDarkBlue, 0.25);
+            border-radius: 4px;
+        }
+    }
 }
