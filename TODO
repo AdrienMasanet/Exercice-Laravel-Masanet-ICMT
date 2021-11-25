@@ -1,8 +1,14 @@
 À FAIRE :
 Faire les crud (voir avec la technique livewire)
-Setup le système de login
+Gérer l'affichage des items (read) avec modal
+Gérer le bouton de suppression (delete) avec modal
+Gérer l'édition des items (update) avec modal
+Formatter l'affichage des données avec clic sur relation pour ouvrir l'objet en question
+Setup le système d'authentification avec passport (login et logout)
 
 FAIT :
+Créer fixtures pour comptes, ordinateurs, composants
+Gérer la situation où il n'y a pas d'élément dans la table
 Faire le front du back office
 Faire le composant de menu
 Setup les migrations et les modèles

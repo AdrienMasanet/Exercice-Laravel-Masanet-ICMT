@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Brand;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -12,7 +11,7 @@ class DataTable extends Component
 
     public $search = '';
     public $modelName;
-    public $fields;
+    public $indexFields;
 
     public function render()
     {
@@ -23,7 +22,7 @@ class DataTable extends Component
             $elementsQuery->where('name', 'LIKE', $search);
         }
 
-        $elements = $elementsQuery->paginate(50);
+        $elements = $elementsQuery->paginate(20);
 
         return view('livewire.data-table', compact('elements'));
     }

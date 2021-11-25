@@ -15,7 +15,7 @@ class CreateComponentsTable extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['TODO']);
+            $table->enum('type', ['case', 'alimentation', 'storage', 'motherboard', 'gpu', 'cpu', 'ram', 'cooling']);
             $table->unsignedInteger('brand_id')->nullable();
             $table->string('name');
             $table->string('serial_number');

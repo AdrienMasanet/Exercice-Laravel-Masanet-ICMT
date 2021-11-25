@@ -6219,6 +6219,34 @@ html body #pagination #pagination-buttons span .active-page span {
 html body #pagination #pagination-buttons span button {
   height: 100%;
 }
+html body tr:hover i {
+  color: #f6f6f6;
+  transition: all 0.05s ease-out;
+}
+html body tr:hover i:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(1px 1px 5px rgba(9, 9, 9, 0.5));
+}
+html body tr:hover i:hover:active {
+  transform: scale(0.99);
+}
+html body .button {
+  color: #f6f6f6;
+  background-color: #ef3b24;
+  border: solid 1px rgba(22, 29, 48, 0.25);
+  border-radius: 4px;
+  transition: all 0.05s ease-in-out;
+}
+html body .button:hover {
+  background-color: #f26654;
+}
+html body .button:active {
+  transform: scale(0.95);
+}
+html body .menu-item:hover span,
+html body .menu-item:hover i {
+  color: #ef3b24;
+}
 html body .color-black {
   color: #090909;
 }
@@ -6236,6 +6264,9 @@ html body .background-black {
 }
 html body .background-white {
   background-color: #f6f6f6;
+}
+html body .background-white-translucent {
+  background-color: rgba(246, 246, 246, 0.05);
 }
 html body .background-darkblue {
   background-color: #161d30;

@@ -10,10 +10,11 @@
                 </div>
 
                 @foreach ($menus as $menuItem)
-                    <li class="mr-3 flex-1">
+                    <li class="flex-1">
                         @if ($menuItem->getName() != 'separator')
-                            <a href="{{ $menuItem->getRoute() }}" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover-border-color-orange">
-                                <i class="{{ $menuItem->getIcon() }} pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">{{ $menuItem->getName() }}</span>
+                            <a href="{{ $menuItem->getRoute() }}" class="{{ $menuItem->getRoute() == '/' . Request::path() ? 'color-orange background-white-translucent' : 'color-white' }} rounded menu-item block py-1 md:py-3 pl-1 align-middle border-b-1 border-gray-800 hover-border-color-orange">
+                                <i class="{{ $menuItem->getIcon() }} fa-fw mx-3 p-0"></i>
+                                <span class="{{ $menuItem->getRoute() == '/' . Request::path() ? 'color-orange' : 'color-white' }} pb-1 md:pb-0 text-xs md:text-base color-white block md:inline-block">{{ $menuItem->getName() }}</span>
                             </a>
                         @else
                             <div class="border-b-2"></div>

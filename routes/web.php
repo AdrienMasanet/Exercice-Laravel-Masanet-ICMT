@@ -20,5 +20,13 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [AdminController::class, 'index']);
+    Route::get('/parametres', [AdminController::class, 'parameters']);
+    Route::get('/comptes', [AdminController::class, 'accountsDataTable']);
+    Route::get('/locations', [AdminController::class, 'lendsDataTable']);
+    Route::get('/demandes-de-location', [AdminController::class, 'requestsDataTable']);
     Route::get('/ordinateurs', [AdminController::class, 'computersDataTable']);
+    Route::get('/composants', [AdminController::class, 'componentsDataTable']);
+    Route::get('/marques', [AdminController::class, 'brandsDataTable']);
+    Route::get('/reparations', [AdminController::class, 'repairsDataTable']);
+    Route::get('/reparateurs', [AdminController::class, 'repairersDataTable']);
 });

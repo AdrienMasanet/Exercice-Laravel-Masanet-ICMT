@@ -18,7 +18,7 @@ class CreateRepairersTable extends Migration
             $table->string('name');
             $table->string('phone', 15);
             $table->string('email');
-            $table->string('siret', 14);
+            $table->string('siret', 17);
             $table->string('address');
             $table->string('city');
             $table->mediumInteger('postal_code');

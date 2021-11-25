@@ -131,6 +131,45 @@ html {
             }
         }
 
+        tr:hover i {
+            color: $themeColorWhite;
+            transition: all 0.05s ease-out;
+
+            &:hover {
+                transform: scale(1.2);
+                filter: drop-shadow(1px 1px 5px rgba($themeColorBlack, 0.5));
+
+                &:active {
+                    transform: scale(0.99);
+                }
+            }
+        }
+
+        .button {
+            color: $themeColorWhite;
+            background-color: $themeColorOrange;
+            border: solid 1px rgba($themeColorDarkBlue, 0.25);
+            border-radius: 4px;
+            transition: all 0.05s ease-in-out;
+
+            &:hover {
+                background-color: lighten($themeColorOrange, 10);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+        .menu-item {
+            &:hover {
+                span,
+                i {
+                    color: $themeColorOrange;
+                }
+            }
+        }
+
         .color-black {
             color: $themeColorBlack;
         }
@@ -153,6 +192,10 @@ html {
 
         .background-white {
             background-color: $themeColorWhite;
+        }
+
+        .background-white-translucent {
+            background-color: rgba($themeColorWhite, 0.05);
         }
 
         .background-darkblue {

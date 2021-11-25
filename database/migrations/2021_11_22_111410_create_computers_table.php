@@ -15,10 +15,9 @@ class CreateComputersTable extends Migration
     {
         Schema::create('computers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('brand_id');
+            $table->unsignedInteger('brand_id')->nullable();
             $table->string('name');
             $table->string('slug');
-            $table->string('stock_type');
             $table->string('comment')->nullable();
             $table->boolean('is_available');
             $table->text('image');

@@ -6,6 +6,6 @@
 
 @section('content')
 
-    <livewire:data-table :fields="['name', 'slug']" :model-name="App\Models\Brand::class" />
+    <livewire:data-table :index-fields="['name', 'slug']" :model-name="App\Models\Computer::class" />
 
 @endsection

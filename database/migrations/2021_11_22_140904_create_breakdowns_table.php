@@ -16,7 +16,7 @@ class CreateBreakdownsTable extends Migration
         Schema::create('breakdowns', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type', ['TODO']);
+            $table->enum('type', ['software', 'hardware']);
             $table->timestamps();
         });
     }
