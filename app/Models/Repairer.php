@@ -26,4 +26,9 @@ class Repairer extends Model
     {
         return $this->hasMany(Repair::class);
     }
+
+    public function getFormattedPhone()
+    {
+        return ('<a href="tel:' . $this->phone . '">' . chunk_split(str_replace('+33', '0', $this->phone), 2, ' ') . '</a>');
+    }
 }

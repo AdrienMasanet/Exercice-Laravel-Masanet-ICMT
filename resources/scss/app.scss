@@ -131,20 +131,6 @@ html {
             }
         }
 
-        tr:hover i {
-            color: $themeColorWhite;
-            transition: all 0.05s ease-out;
-
-            &:hover {
-                transform: scale(1.2);
-                filter: drop-shadow(1px 1px 5px rgba($themeColorBlack, 0.5));
-
-                &:active {
-                    transform: scale(0.99);
-                }
-            }
-        }
-
         .button {
             color: $themeColorWhite;
             background-color: $themeColorOrange;
@@ -202,7 +188,37 @@ html {
             background-color: $themeColorDarkBlue;
         }
 
-        .background-orange {
+        .hover-background-orange {
+            &:hover {
+                background-color: $themeColorOrange;
+            }
+        }
+
+        .hover-background-black {
+            &:hover {
+                background-color: $themeColorBlack;
+            }
+        }
+
+        .hover-background-white {
+            &:hover {
+                background-color: $themeColorWhite;
+            }
+        }
+
+        .hover-background-white-translucent {
+            &:hover {
+                background-color: rgba($themeColorWhite, 0.05);
+            }
+        }
+
+        .hover-background-darkblue {
+            &:hover {
+                background-color: $themeColorDarkBlue;
+            }
+        }
+
+        .hover-background-orange {
             background-color: $themeColorOrange;
         }
 
@@ -257,6 +273,12 @@ html {
         .pretty-border {
             border: solid 1px rgba($themeColorDarkBlue, 0.25);
             border-radius: 4px;
+        }
+
+        #modal {
+            .background {
+                background: rgba($themeColorDarkBlue, 0.5);
+            }
         }
     }
 }

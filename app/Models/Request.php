@@ -25,4 +25,23 @@ class Request extends Model
     {
         return $this->hasOne(Computer::class);
     }
+
+    public function getFormattedIsAccepted()
+    {
+        if ($this->is_accepted) {
+            return ('Oui');
+        } else {
+            return ('Non');
+        }
+    }
+
+    public function getFormattedUserId()
+    {
+        return ('<a>' . $this->user_id . '</a>');
+    }
+
+    public function getFormattedComputerId()
+    {
+        return ('<a>' . $this->user_id . '</a>');
+    }
 }

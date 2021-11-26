@@ -36,4 +36,22 @@ class Computer extends Model
         $this->attributes['name'] = ucfirst($value);
         $this->attributes['slug'] = Str::slug($value);
     }
+
+    public function getFormattedIsAvailable()
+    {
+        if ($this->is_available) {
+            return ('Oui');
+        } else {
+            return ('Non');
+        }
+    }
+
+    public function getFormattedBrandId()
+    {
+        if ($this->brand_id) {
+            return ('<a>' . $this->brand_id . '</a>');
+        } else {
+            return 'Pas de marque';
+        }
+    }
 }

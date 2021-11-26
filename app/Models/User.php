@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Lend;
 use App\Models\Request;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -52,5 +53,15 @@ class User extends Authenticatable
     public function requests()
     {
         return $this->hasMany(Request::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function getFormattedRoleId()
+    {
+        return($this->role->name);
     }
 }

@@ -23,7 +23,7 @@ class ComputerFactory extends Factory
     public function definition()
     {
         return [
-            'brand_id' => $this->faker->randomElement(null, $this->faker->randomElement(Brand::pluck('id'))),
+            'brand_id' => $this->faker->randomElement([null, $this->faker->randomElement(Brand::pluck('id'))]),
             'name' => $this->faker->word(),
             'comment' => $this->faker->text(240),
             'is_available' => $this->faker->boolean(),

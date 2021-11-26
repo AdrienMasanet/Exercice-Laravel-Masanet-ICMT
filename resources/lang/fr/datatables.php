@@ -25,5 +25,6 @@ return [
     'is_returned' => 'Machine retournée',
     'is_broken' => 'Machine en panne',
     'is_repaired' => 'Machine réparée',
+    'is_available' => 'Disponible'
 
 ];

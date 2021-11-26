@@ -21,6 +21,8 @@
 
 <body>
 
+    <livewire:modal />
+
     <div class="flex">
 
         <x-admin.sidemenu :menus="$menuItems" />

@@ -27,14 +27,15 @@
             <tbody>
                 @forelse ($elements as $element)
                     <tr>
+
                         @foreach ($indexFields as $field)
-                            <td>{{ $element->$field }}</td>
+                            <td>{!! method_exists($element, 'getFormatted' . Str::camel($field)) ? $element->{'getFormatted' . str::camel($field)}() : $element->$field !!}</td>
                         @endforeach
 
                         <td class="flex justify-around align-center">
-                            <i class="far fa-eye color-orange drop-shadow mt-1"></i>
-                            <i class="fas fa-edit color-orange drop-shadow mt-1"></i>
-                            <i class="fas fa-trash-alt color-orange drop-shadow mt-1"></i>
+                            <i wire:click="$emitSelf('onOpenViewModal')" class="far fa-eye color-orange drop-shadow mt-1"></i>
+                            <i wire:click="$emitSelf('onOpenEditModal')" class="fas fa-edit color-orange drop-shadow mt-1"></i>
+                            <i wire:click="$emitSelf('onOpenRemoveModal')" class="far fas fa-trash-alt color-orange drop-shadow mt-1"></i>
                         </td>
 
                     </tr>
@@ -44,6 +45,7 @@
                         <td colspan="100%" class="text-center py-5">Aucune donnée</td>
                     </tr>
                 @endforelse
+
             </tbody>
 
         </table>

@@ -26,7 +26,7 @@ class RepairFactory extends Factory
      */
     public function definition()
     {
-        $returnedAt = $this->faker->randomElement(null, Carbon::createFromTimestamp(($this->faker->dateTimeBetween('-1 months', '+ 2 months')->getTimestamp())));
+        $returnedAt = $this->faker->randomElement([null, Carbon::createFromTimestamp(($this->faker->dateTimeBetween('-1 months', '+ 2 months')->getTimestamp()))]);
 
         return [
             'computer_id' => $this->faker->randomElement(Computer::pluck('id')),

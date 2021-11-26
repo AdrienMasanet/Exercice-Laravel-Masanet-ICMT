@@ -45,4 +45,38 @@ class Repair extends Model
     {
         return $this->belongsToMany(RepairType::class, 'repairs_repair_types');
     }
+
+    public function getFormattedIsRepaired()
+    {
+        if ($this->is_repaired) {
+            return ('Oui');
+        } else {
+            return ('Non');
+        }
+    }
+
+    public function getFormattedIsBroken()
+    {
+        if ($this->is_broken) {
+            return ('Oui');
+        } else {
+            return ('Non');
+        }
+    }
+
+    public function getFormattedClientId()
+    {
+        if ($this->client_id) {
+            return ('<a>' . $this->client_id . '</a>');
+        }
+    }
+
+    public function getFormattedReturnedAt()
+    {
+        if ($this->returned_at) {
+            return ($this->returned_at);
+        } else {
+            return ('Pas encore renvoyé');
+        }
+    }
 }

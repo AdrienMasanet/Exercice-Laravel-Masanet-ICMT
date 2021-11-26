@@ -6219,17 +6219,6 @@ html body #pagination #pagination-buttons span .active-page span {
 html body #pagination #pagination-buttons span button {
   height: 100%;
 }
-html body tr:hover i {
-  color: #f6f6f6;
-  transition: all 0.05s ease-out;
-}
-html body tr:hover i:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(1px 1px 5px rgba(9, 9, 9, 0.5));
-}
-html body tr:hover i:hover:active {
-  transform: scale(0.99);
-}
 html body .button {
   color: #f6f6f6;
   background-color: #ef3b24;
@@ -6271,7 +6260,22 @@ html body .background-white-translucent {
 html body .background-darkblue {
   background-color: #161d30;
 }
-html body .background-orange {
+html body .hover-background-orange:hover {
+  background-color: #ef3b24;
+}
+html body .hover-background-black:hover {
+  background-color: #090909;
+}
+html body .hover-background-white:hover {
+  background-color: #f6f6f6;
+}
+html body .hover-background-white-translucent:hover {
+  background-color: rgba(246, 246, 246, 0.05);
+}
+html body .hover-background-darkblue:hover {
+  background-color: #161d30;
+}
+html body .hover-background-orange {
   background-color: #ef3b24;
 }
 html body .hover-color-black:hover {
@@ -6301,6 +6305,9 @@ html body .hover-border-color-orange:hover {
 html body .pretty-border {
   border: solid 1px rgba(22, 29, 48, 0.25);
   border-radius: 4px;
+}
+html body #modal .background {
+  background: rgba(22, 29, 48, 0.5);
 }
 /*! tailwindcss v2.2.16 | MIT License | https://tailwindcss.com */
 

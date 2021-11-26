@@ -8,6 +8,7 @@
 
     <livewire:data-table
     :index-fields="['name', 'email', 'role_id', 'created_at', 'updated_at']"
-    :model-name="App\Models\User::class" />
+    :model-name="App\Models\User::class"
+    />
 
 @endsection
