@@ -14,7 +14,7 @@ class CreateBreakdownsTable extends Migration
     public function up()
     {
         Schema::create('breakdowns', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->enum('type', ['software', 'hardware']);
             $table->timestamps();

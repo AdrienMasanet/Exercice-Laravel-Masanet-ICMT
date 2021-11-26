@@ -14,8 +14,8 @@ class CreateRepairsRepairsTypesTable extends Migration
     public function up()
     {
         Schema::create('repairs_repair_types', function (Blueprint $table) {
-            $table->integer('repair_id')->unsigned();
-            $table->integer('repair_type_id')->unsigned();
+            $table->integer('repair_id')->unsigned()->unsigned();
+            $table->integer('repair_type_id')->unsigned()->unsigned();
         });
     }
 

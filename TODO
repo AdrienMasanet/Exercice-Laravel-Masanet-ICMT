@@ -1,5 +1,4 @@
 À FAIRE :
-Setup de base de la modal
 Faire les crud (voir avec la technique livewire)
 Gérer l'affichage des items (read) avec modal
 Gérer le bouton de suppression (delete) avec modal
@@ -8,6 +7,7 @@ Formatter l'affichage des données avec clic sur relation pour ouvrir l'objet en
 Setup le système d'authentification avec passport (login et logout)
 
 FAIT :
+Setup de base de la modal
 Faire les fonctions de formatting dans les models
 Créer fixtures pour comptes, ordinateurs, composants
 Gérer la situation où il n'y a pas d'élément dans la table

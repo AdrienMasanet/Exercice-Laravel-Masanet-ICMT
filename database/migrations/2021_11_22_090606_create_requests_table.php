@@ -14,9 +14,9 @@ class CreateRequestsTable extends Migration
     public function up()
     {
         Schema::create('requests', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('computer_id');
+            $table->increments('id');
+            $table->unsignedInteger('user_id')->unsigned();
+            $table->unsignedInteger('computer_id')->unsigned();
             $table->boolean('is_accepted');
             $table->dateTime('start_date');
             $table->timestamps();

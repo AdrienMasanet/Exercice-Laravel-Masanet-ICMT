@@ -14,8 +14,8 @@ class CreateComputersComponentsTable extends Migration
     public function up()
     {
         Schema::create('computers_components', function (Blueprint $table) {
-            $table->integer('computer_id')->unsigned();
-            $table->integer('component_id')->unsigned();
+            $table->integer('computer_id')->unsigned()->unsigned();
+            $table->integer('component_id')->unsigned()->unsigned();
         });
     }
 

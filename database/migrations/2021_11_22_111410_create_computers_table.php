@@ -14,8 +14,8 @@ class CreateComputersTable extends Migration
     public function up()
     {
         Schema::create('computers', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('brand_id')->nullable();
+            $table->increments('id');
+            $table->unsignedInteger('brand_id')->unsigned()->nullable();
             $table->string('name');
             $table->string('slug');
             $table->string('comment')->nullable();
