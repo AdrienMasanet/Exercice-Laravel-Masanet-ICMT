@@ -15,8 +15,8 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->unsigned();
-            $table->unsignedInteger('computer_id')->unsigned();
+            $table->unsignedInteger('user_id')->unsigned()->nullable();
+            $table->unsignedInteger('computer_id')->unsigned()->nullable();
             $table->boolean('is_accepted');
             $table->dateTime('start_date');
             $table->timestamps();

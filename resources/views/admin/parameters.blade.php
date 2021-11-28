@@ -6,6 +6,6 @@
 
 @section('content')
 
-<h1>TODO : ici les différents réglages possibles</h1>
+    <h1>TODO : ici les différents réglages possibles</h1>
 
 @endsection

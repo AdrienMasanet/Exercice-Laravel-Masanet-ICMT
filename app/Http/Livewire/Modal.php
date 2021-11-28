@@ -10,6 +10,9 @@ class Modal extends Component
     public $modalStyle;
     public $modalType;
     public $buttonUrl;
+    public $componentToEmitTo;
+    public $buttonCallback;
+    public $buttonCallbackArgs;
     public $modalActionText;
     public $modalDismissText;
     public $modalTitle;
@@ -18,10 +21,7 @@ class Modal extends Component
 
     public $listeners = [
         'onOpenModal',
-        'onCloseModal',
-        'onDataTableActionShowElement',
-        'onDataTableActionEditElement',
-        'onDataTableActionRemoveElement'
+        'onCloseModal'
     ];
 
     public function render()
@@ -34,7 +34,9 @@ class Modal extends Component
         $this->modalId = $properties['modalId'];
         $properties['modalStyle'] = $this->modalStyle = $properties['modalStyle'] ?? null;
         $properties['modalType'] = $this->modalType = $properties['modalType'] ?? null;
+        $properties['componentToEmitTo'] = $this->componentToEmitTo = $properties['componentToEmitTo'] ?? null;
         $properties['buttonCallback'] = $this->buttonCallback = $properties['buttonCallback'] ?? null;
+        $properties['buttonCallbackArgs'] = $this->buttonCallbackArgs = $properties['buttonCallbackArgs'] ?? null;
         $properties['modalActionText'] = $this->modalActionText = $properties['modalActionText'] ?? null;
         $properties['modalDismissText'] = $this->modalDismissText = $properties['modalDismissText'] ?? null;
         $properties['modalTitle'] = $this->modalTitle = $properties['modalTitle'] ?? null;
@@ -45,20 +47,5 @@ class Modal extends Component
     public function onCloseModal()
     {
         $this->active = false;
-    }
-
-    public function onDataTableActionShowElement()
-    {
-        dd('affichage !'); // TODO : route jusqu'au crud de suppression
-    }
-
-    public function onDataTableActionEditElement()
-    {
-        dd('édition !'); // TODO : route jusqu'au crud de suppression
-    }
-
-    public function onDataTableActionRemoveElement()
-    {
-        $this->emitTo('modal', 'onCloseModal');
     }
 }
