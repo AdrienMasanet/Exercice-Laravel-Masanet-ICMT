@@ -15,9 +15,9 @@ class CreateRepairsTable extends Migration
     {
         Schema::create('repairs', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('computer_id')->unsigned();
-            $table->unsignedInteger('repairer_id')->unsigned();
-            $table->unsignedInteger('client_id')->unsigned();
+            $table->unsignedInteger('computer_id')->unsigned()->nullable();
+            $table->unsignedInteger('repairer_id')->unsigned()->nullable();
+            $table->unsignedInteger('client_id')->unsigned()->nullable();
             $table->text('diagnostic');
             $table->boolean('is_repaired');
             $table->boolean('is_broken');

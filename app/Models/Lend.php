@@ -33,6 +33,10 @@ class Lend extends Model
 
     public function getFormattedUserId()
     {
-        return ('<a>' . $this->user_id . '</a>');
+        if ($this->user_id) {
+            return ('<a>' . $this->user_id . '</a>');
+        } else {
+            return('<p class="text-red-700">Compte supprimé</p>');
+        }
     }
 }

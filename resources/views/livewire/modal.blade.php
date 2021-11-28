@@ -58,7 +58,7 @@
                                     @isset($modalText)
                                         <div class="mt-2">
                                             <p class="text-sm text-gray-500">
-                                                {{ $modalText }}
+                                                {!! $modalText !!}
                                             </p>
                                         </div>
                                     @endisset
@@ -75,28 +75,28 @@
 
                             @switch($modalStyle)
                                 @case('success')
-                                    <button wire:click="$emitSelf('{{ $buttonCallback }}')" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-300 text-base font-medium color-darkblue hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button wire:click="$emitTo('{{ $componentToEmitTo }}', '{{ $buttonCallback }}'{{ $buttonCallbackArgs ? ', \'' . $buttonCallbackArgs . '\'' : '' }})" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-300 text-base font-medium color-darkblue hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
                                         {{ $modalActionText }}
                                     </button>
                                 @break
                                 @case('info')
-                                    <button wire:click="$emitSelf('{{ $buttonCallback }}')" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-300 text-base font-medium color-darkblue hover-background-darkblue hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button wire:click="$emitTo('{{ $componentToEmitTo }}', '{{ $buttonCallback }}'{{ $buttonCallbackArgs ? ', \'' . $buttonCallbackArgs . '\'' : '' }})" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-300 text-base font-medium color-darkblue hover-background-darkblue hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
                                         {{ $modalActionText }}
                                     </button>
                                 @break
                                 @case('danger')
-                                    <button wire:click="$emitSelf('{{ $buttonCallback }}')" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-300 text-base font-medium color-darkblue hover-background-orange hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button wire:click="$emitTo('{{ $componentToEmitTo }}', '{{ $buttonCallback }}'{{ $buttonCallbackArgs ? ', \'' . $buttonCallbackArgs . '\'' : '' }})" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-300 text-base font-medium color-darkblue hover-background-orange hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
                                         {{ $modalActionText }}
                                     </button>
 
                                 @break
                                 @case('remove')
-                                    <button wire:click="$emitSelf('{{ $buttonCallback }}')" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-300 text-base font-medium color-darkblue hover-background-darkblue hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button wire:click="$emitTo('{{ $componentToEmitTo }}', '{{ $buttonCallback }}'{{ $buttonCallbackArgs ? ', \'' . $buttonCallbackArgs . '\'' : '' }})" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-300 text-base font-medium color-darkblue hover-background-darkblue hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
                                         {{ $modalActionText }}
                                     </button>
                                 @break
                                 @default
-                                    <button wire:click="$emitSelf('{{ $buttonCallback }}')" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-300 text-base font-medium color-darkblue hover-background-darkblue hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button wire:click="$emitTo('{{ $componentToEmitTo }}', '{{ $buttonCallback }}'{{ $buttonCallbackArgs ? ', \'' . $buttonCallbackArgs . '\'' : '' }})" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-300 text-base font-medium color-darkblue hover-background-darkblue hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
                                         {{ $modalActionText }}
                                     </button>
                                 @break

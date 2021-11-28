@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Str;
+
 
 class DataTable extends Component
 {
@@ -12,11 +14,18 @@ class DataTable extends Component
     public $search = '';
     public $modelName;
     public $indexFields;
+    public $showFields;
+    public $canCreate;
+    public $buttonCallbackArgs;
 
     public $listeners = [
+        'onCreateNewElement',
         'onOpenViewModal',
         'onOpenEditModal',
-        'onOpenRemoveModal'
+        'onOpenRemoveModal',
+        'onDataTableActionShowElement',
+        'onDataTableActionEditElement',
+        'onDataTableActionRemoveElement'
     ];
 
     public function render()
@@ -25,7 +34,9 @@ class DataTable extends Component
 
         if ($this->search != '') {
             $search = '%' . $this->search . '%';
-            $elementsQuery->where('name', 'LIKE', $search);
+            foreach ($this->indexFields as $field) {
+                $elementsQuery->orWhere($field, 'LIKE', $search);
+            }
         }
 
         $elements = $elementsQuery->paginate(20);
@@ -33,13 +44,31 @@ class DataTable extends Component
         return view('livewire.data-table', compact('elements'));
     }
 
-    public function onOpenViewModal()
+    public function onCreateNewElement()
     {
+        $this->emitSelf('onOpenEditModal');
+    }
+
+    public function onOpenViewModal($showFields, $elementId)
+    {
+        $element = $this->modelName::find($elementId)->first();
+        $modalText = '';
+
+        foreach (json_decode($showFields) as $field) {
+            $methodToCheck = 'getFormatted' . ucfirst(Str::camel($field));
+
+            if (method_exists($element, $methodToCheck)) {
+                $modalText = $modalText . '<p> ' . trans('datatables.' . $field) . ' : <span class="color-orange">' . $element->$methodToCheck() . '</span></p>';
+            } else {
+                $modalText = $modalText . '<p> ' . trans('datatables.' . $field) . ' : <span class="color-orange">' . $element->$field . '</span></p>';
+            }
+        }
+
         $this->emitTo('modal', 'onOpenModal', [
             'modalId' => 'view',
-            'buttonCallback' => 'onDataTableActionShowElement',
+            'componentToEmitTo' => 'modal',
             'modalDismissText' => 'Fermer',
-            'modalTitle' => 'Affichage de TODO',
+            'modalText' => $modalText
         ]);
     }
 
@@ -49,24 +78,37 @@ class DataTable extends Component
             'modalId' => 'edit',
             'modalStyle' => 'edit',
             'modalType' => 'action',
+            'componentToEmitTo' => 'data-table',
             'buttonCallback' => 'onDataTableActionEditElement',
             'modalActionText' => 'Enregistrer',
-            'modalDismissText' => 'Annuler',
-            'modalTitle' => 'Édition de TODO'
+            'modalDismissText' => 'Annuler'
         ]);
     }
 
-    public function onOpenRemoveModal()
+    public function onOpenRemoveModal($elementId)
     {
         $this->emitTo('modal', 'onOpenModal', [
             'modalId' => 'remove',
             'modalStyle' => 'remove',
             'modalType' => 'action',
+            'componentToEmitTo' => 'data-table',
             'buttonCallback' => 'onDataTableActionRemoveElement',
+            'buttonCallbackArgs' => $elementId,
             'modalActionText' => 'Supprimer',
             'modalDismissText' => 'Annuler',
-            'modalTitle' => 'Supprimer le truc',
-            'modalText' => 'Êtes vous sûr(e) de supprimer le truc ?'
+            'modalTitle' => 'Supprimer',
+            'modalText' => 'Êtes vous sûr(e) de vouloir supprimer cet élément ?'
         ]);
+    }
+
+    public function onDataTableActionEditElement()
+    {
+        dd('édition !'); // TODO
+    }
+
+    public function onDataTableActionRemoveElement($elementId)
+    {
+        $this->modelName::find($elementId)->delete();
+        $this->emitTo('modal', 'onCloseModal');
     }
 }
